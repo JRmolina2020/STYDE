@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Profession;
 
-class DatabaseSeeder extends Seeder
+class ProfessionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    $this->call(ProfessionSeeder::class);
-    $this->call(UserSeeder::class);
+       factory(Profession::class,6)->create();
+       //DB::table('profesions')->truncate();
     }
 }

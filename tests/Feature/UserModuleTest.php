@@ -15,27 +15,17 @@ class UserModuleTest extends TestCase
     {
         $this->get('/users/')
         ->assertStatus(200)
-        ->assertSee('usuarios');
+        ->assertSee('Joseph Bayer Jr.');
     }
-     /**
+    /**
      * @test
      */
-     function show()
+    function show()
     {
-        $this->get('/users/1')
+        $this->get('/users/5')
         ->assertStatus(200)
-        ->assertSee('hola tu id es 1');
+        ->assertSee('Reba Wiegand');
     }
-
-     /**
-     * @test
-     */
-     function show2()
-    {
-        $this->get('/users/jose/machorro')
-        ->assertStatus(200)
-        ->assertSee('hola jose tu apodo es machorro');
-    }
-
+     
 
 }
