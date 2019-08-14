@@ -13,12 +13,14 @@ Route::post('/users/','Usercontroller@store')
 ->name('users');
 Route::delete('users/{item}','UserController@delete')
 ->where('id','[0-9]+')
-->name('users.delete');;
-
-//rutas con parametro numerico
+->name('users.delete');
 Route::get('/users/{item}','Usercontroller@show')
 ->where('id','[0-9]+')
 ->name('users.show');
+Route::get('/users/edit/{item}','Usercontroller@edit')
+->where('id','[0-9]+')
+->name('users.edit');
+Route::put('/users/{user}', 'UserController@update');
 //ruta con mas de un parametro
 Route::get('/users/{name}/{nickname}', 'Usercontroller@show2');
 //ruta con mas de un parametro , parametro opcional 

@@ -16,6 +16,7 @@ class CreateProfessionsTable extends Migration
         Schema::create('professions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',50);
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

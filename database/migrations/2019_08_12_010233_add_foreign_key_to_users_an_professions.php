@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyProfessionIdToUser extends Migration
+class AddForeignKeyToUsersAnProfessions extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+   public function up()
     {
         Schema::table('users', function (Blueprint $table) {
         $table->unsignedInteger('profession_id')->after("id"); 
@@ -30,4 +30,5 @@ class AddForeignKeyProfessionIdToUser extends Migration
         $table->dropColumn('profession_id');
         });
     }
+
 }
